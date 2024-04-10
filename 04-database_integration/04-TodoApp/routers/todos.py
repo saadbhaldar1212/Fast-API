@@ -21,7 +21,7 @@ def get_db():
 db_dependency = Annotated[Session, Depends(get_db)]
 
 
-@router.get("/", status_code=status.HTTP_200_OK)
+@router.get("/read_all_todos", status_code=status.HTTP_200_OK)
 async def read_all_todos(db: db_dependency):
     return db.query(models.Todos).all()
 

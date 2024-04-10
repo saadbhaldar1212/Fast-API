@@ -19,3 +19,24 @@ class TodoValidate(BaseModel):
                 "complete": False,
             }
         }
+
+
+class CreateUserRequest(BaseModel):
+    email: str
+    username: str
+    first_name: str
+    last_name: str
+    hashed_password: str
+    role: str
+
+    class Config:
+        json_schema_extra = {
+            "example": {
+                "email": "example@gmail.com",
+                "username": "Example Username",
+                "first_name": "Example First Name",
+                "last_name": "Example Last Name",
+                "hashed_password": "Example Password",
+                "role": "Example Role",
+            }
+        }
