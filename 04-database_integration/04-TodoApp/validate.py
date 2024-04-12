@@ -40,3 +40,7 @@ class CreateUserRequest(BaseModel):
                 "role": "Example Role",
             }
         }
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
